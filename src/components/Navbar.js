@@ -18,7 +18,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-logo">
-          <Link to="/">Logo</Link>
+          <Link to="/">Loading...</Link>
         </div>
       </div>
     </nav>

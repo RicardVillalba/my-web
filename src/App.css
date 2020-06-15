@@ -3,7 +3,7 @@
 
 .App {
   text-align: center;
-  
+  display: block;
 }
 
 .gameArea {
@@ -12,8 +12,13 @@
   width: 400px;
   border: 1px solid black;
   margin: 10vh auto;
+  display: block;
 }
-
+.score {
+  position: relative;
+  margin: -5vh;
+  font-family: 'Montserrat', sans-serif;
+}
 .snakeDot {
   position: absolute;
   height: 2%;

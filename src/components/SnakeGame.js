@@ -127,7 +127,7 @@ class SnakeGame extends Component {
   }
 
   onGameOver() {
-    alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
+    //alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
     this.setState(initialState);
   }
 
@@ -136,6 +136,7 @@ class SnakeGame extends Component {
       <div className="gameArea">
         <Snake snakeDots={this.state.snakeDots} />
         <Apple dot={this.state.apple} />
+        <h5 className="score">Score: {(this.state.snakeDots.length)*37}</h5>
       </div>
     );
   }
