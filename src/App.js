@@ -1,32 +1,24 @@
 import React, { Component } from "react";
 import "./App.css";
-import Snake from "./Snake";
-import Apple from "./Apple";
-
-const getRandomPosition = () => {
-  let min = 1;
-  let max = 98;
-  let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
-  let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
-  return [x, y];
-};
+import Navbar from './components/Navbar'
+import { Route, BrowserRouter } from 'react-router-dom'
+import Home from './components/Home'
+import SnakeGame from './components/SnakeGame'
 
 class App extends Component {
-  state = {
-    apple: getRandomPosition(),
-    snakeDots: [
-      [0, 0],
-      [2, 0],
-    ],
-  };
-
   render() {
     return (
-      <div className="gameArea">
-        <Snake snakeDots={this.state.snakeDots} />
-        <Apple dot={this.state.apple} />
+      <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Route exact path='/' component={Home}/>
+        <Route path='/snakeGame' component={SnakeGame} />
       </div>
+    </BrowserRouter>
     );
   }
 }
 export default App;
+
+//<NavLink to="/snakeGame">Snake</NavLink>
+//<Route path="/snakeGame" component={SnakeGame} />
